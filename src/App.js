@@ -1,26 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
+import HttpsRedirect from 'react-https-redirect';
+import {
+  Route,
+  Switch,
+  withRouter,
+} from 'react-router-dom';
+import { Sidebar } from './components';
+import {
+  Blog,
+  Home,
+} from './screens';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <HttpsRedirect>
+      <div className="app">
+        <Sidebar />
+        <Switch>
+          <Route exact path="/" render={ownProps => <Home {...ownProps} />} />
+          <Route exact path="/blog" render={ownProps => <Blog {...ownProps} />} />
+        </Switch>
+      </div>
+    </HttpsRedirect>
   );
 }
 
-export default App;
+export default withRouter(App);
