@@ -7,12 +7,26 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+const THEME = createMuiTheme({
+  typography: {
+    fontFamily: '"Mukta Mahee", Helvetica, Arial, sans-serif',
+    fontSize: 16,
+    fontWeightRegular: 400,
+    fontWeightMedium: 700,
+    useNextVariants: true,
+  },
+});
+
 ReactDOM.render(
-  <Provider store={store}>
-    <ConnectedRouter history={history}>
-      <App />
-    </ConnectedRouter>
-  </Provider>,
+  <MuiThemeProvider theme={THEME}>
+    <Provider store={store}>
+      <ConnectedRouter history={history}>
+        <App />
+      </ConnectedRouter>
+    </Provider>
+  </MuiThemeProvider>,
   document.getElementById('root'),
 );
 
