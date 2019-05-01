@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import { Link } from 'react-router-dom';
 
 import { withStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
@@ -16,6 +17,11 @@ import { LinkedinIcon, UnsplashIcon } from '../components/icons';
 const styles = {
   header: {
     paddingTop: 100,
+    marginBottom: '0.35em',
+  },
+  body: {
+    marginTop: '1.5em',
+    marginBottom: '0.5em',
   },
   link: {
     textDecoration: 'none',
@@ -27,11 +33,11 @@ function Home(props) {
 
   return (
     <div className="home">
-      <Typography component="h1" variant="h2" gutterBottom className={classes.header}>
+      <Typography component="h1" variant="h2" className={classes.header}>
         AJ Tamayo
       </Typography>
 
-      <Typography variant="body1" gutterBottom>
+      <Typography variant="body1" className={classes.body}>
         I make websites and mobile apps. Hire me!
       </Typography>
 
@@ -43,9 +49,9 @@ function Home(props) {
           <ListItemText
             primary={
               <Fragment>
-                <a href="tel:+639985685747" className={classes.link}>(+63) 998 568 5747</a>
+                <a href="tel:+639985685747">(+63) 998 568 5747</a>
                 <span>&nbsp;&middot;&nbsp;</span>
-                <a href="tel:+639162455564" className={classes.link}>(+63) 916 245 5564</a>
+                <a href="tel:+639162455564">(+63) 916 245 5564</a>
               </Fragment>
             }
           />
@@ -55,7 +61,7 @@ function Home(props) {
             <EmailIcon />
           </ListItemIcon>
           <ListItemText
-            primary={<a href="mailto:aj@atamayo.io" className={classes.link}>aj@atamayo.io</a>}
+            primary={<a href="mailto:aj@atamayo.io">aj@atamayo.io</a>}
           />
         </ListItem>
         <ListItem>
@@ -71,7 +77,7 @@ function Home(props) {
             <UnsplashIcon />
           </ListItemIcon>
           <ListItemText
-            primary={<a href="https://unsplash.com/@ajatamayo" className={classes.link}>https://unsplash.com/@ajatamayo</a>}
+            primary={<a href="https://unsplash.com/@ajatamayo">https://unsplash.com/@ajatamayo</a>}
           />
         </ListItem>
         <ListItem>
@@ -79,10 +85,21 @@ function Home(props) {
             <LinkedinIcon />
           </ListItemIcon>
           <ListItemText
-            primary={<a href="https://www.linkedin.com/in/ajatamayo" className={classes.link}>https://www.linkedin.com/in/ajatamayo</a>}
+            primary={<a href="https://www.linkedin.com/in/ajatamayo">https://www.linkedin.com/in/ajatamayo</a>}
           />
         </ListItem>
       </List>
+
+      <Typography variant="body1" className={classes.body}>
+        Hi! My name is AJ and I'm currently working as a Full Stack Developer over at <a href="https://qwikwire.com/">Qwikwire</a>.
+        I graduated <em>cum laude</em> from the University of the Philippines with a Bachelor of Science in Electronics and Communications Engineering, but I ultimately fell in love with coding when I got my first job at <a href="https://icannhas.com/">icannhas</a>.
+      </Typography>
+      <Typography variant="body1" className={classes.body}>
+        Since 2012, I've been developing websites and apps for various clients. And for {new Date().getFullYear() - 2016} years now, I've been doing freelance work too.
+      </Typography>
+      <Typography variant="body1" className={classes.body}>
+        Check out my <Link to="/portfolio">portfolio</Link>!
+      </Typography>
     </div>
   );
 }

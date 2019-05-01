@@ -12,6 +12,7 @@ import { Navigation } from './components';
 import {
   Blog,
   Home,
+  Portfolio,
 } from './screens';
 
 import bgImage from './images/background.jpg';
@@ -40,6 +41,7 @@ class App extends Component {
           <Switch>
             <Route exact path="/" render={ownProps => <Home {...ownProps} />} />
             <Route exact path="/blog" render={ownProps => <Blog {...ownProps} />} />
+            <Route exact path="/portfolio" render={ownProps => <Portfolio {...ownProps} />} />
           </Switch>
           <Navigation />
         </div>

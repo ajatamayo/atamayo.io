@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { classNames } from 'react-extras';
+import { withRouter } from 'react-router-dom';
 
 import { withStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
@@ -29,12 +30,20 @@ const styles = {
   },
 };
 
+const URLS = [
+  '/',
+  '/portfolio',
+  '/blog',
+];
+
 class Navigation extends Component {
   constructor(props) {
     super(props);
 
+    const { location } = this.props;
+
     this.state = {
-      value: 0,
+      value: URLS.indexOf(location.pathname),
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -42,6 +51,9 @@ class Navigation extends Component {
 
   handleChange(event, value) {
     this.setState({ value });
+
+    const { history } = this.props;
+    history.push(URLS[value]);
   }
 
   render() {
@@ -65,4 +77,4 @@ class Navigation extends Component {
   }
 }
 
-export default withStyles(styles)(Navigation);
+export default withRouter(withStyles(styles)(Navigation));
