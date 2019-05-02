@@ -27,7 +27,11 @@ const styles = theme => ({
       minHeight: '100vh',
       display: 'flex',
       flexDirection: 'row-reverse',
-      padding: 0,
+      padding: '0 0 0 200px',
+    },
+
+    [theme.breakpoints.up('lg')]: {
+      paddingLeft: 300,
     },
 
     '&::before': {
@@ -51,6 +55,10 @@ const styles = theme => ({
   },
   mainWrapper: {
     maxWidth: 800,
+
+    [theme.breakpoints.up('md')]: {
+      paddingBottom: 200,
+    },
 
     [theme.breakpoints.up('lg')]: {
       paddingTop: 50,

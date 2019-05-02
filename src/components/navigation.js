@@ -27,9 +27,12 @@ const styles = theme => ({
     zIndex: 10,
 
     [theme.breakpoints.up('md')]: {
-      position: 'relative',
       marginLeft: 0,
       width: SIDEBAR_WIDTH_MD,
+      position: 'fixed',
+      top: 0,
+      left: 0,
+      backgroundColor: 'white',
     },
 
     [theme.breakpoints.up('lg')]: {
@@ -44,14 +47,6 @@ const styles = theme => ({
     [theme.breakpoints.up('md')]: {
       flexDirection: 'column',
       height: 'auto',
-      position: 'fixed',
-      width: SIDEBAR_WIDTH_MD,
-      top: SIDEBAR_WIDTH_MD,
-    },
-
-    [theme.breakpoints.up('lg')]: {
-      width: SIDEBAR_WIDTH_LG,
-      top: SIDEBAR_WIDTH_LG,
     },
   },
   navButton: {
@@ -129,7 +124,6 @@ const styles = theme => ({
     alignItems: 'flex-end',
     justifyContent: 'center',
     padding: '0 24px',
-    position: 'fixed',
 
     [theme.breakpoints.up('lg')]: {
       height: SIDEBAR_WIDTH_LG,
