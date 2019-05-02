@@ -7,9 +7,9 @@ import obstruction from 'obstruction';
 import { withStyles } from '@material-ui/core/styles';
 import BottomNavigation from '@material-ui/core/BottomNavigation';
 import BottomNavigationAction from '@material-ui/core/BottomNavigationAction';
-import PersonIcon from '@material-ui/icons/Person';
+import AssignmentTurnedInIcon from '@material-ui/icons/AssignmentTurnedIn';
 import FolderSpecialIcon from '@material-ui/icons/FolderSpecial';
-import WebIcon from '@material-ui/icons/Web';
+import PersonIcon from '@material-ui/icons/Person';
 
 import { changeScreen } from '../actions/appActions';
 
@@ -21,6 +21,7 @@ const styles = {
     bottom: 0,
     boxShadow: '0 -3px 8px 0 rgba(0, 0, 0, 0.2)',
     marginLeft: -25,
+    zIndex: 10,
   },
   nav: {
     backgroundColor: '#1a237e',
@@ -34,21 +35,25 @@ const styles = {
   },
 };
 
+export const SCREEN_PROFILE = 'profile';
+export const SCREEN_PORTFOLIO = 'portfolio';
+export const SCREEN_WORK_WITH_ME = 'workWithMe';
+
 export const SCREENS = {
-  profile: {
+  [SCREEN_PROFILE]: {
     url: '/',
     icon: <PersonIcon />,
     label: 'Profile',
   },
-  portfolio: {
+  [SCREEN_PORTFOLIO]: {
     url: '/portfolio',
     icon: <FolderSpecialIcon />,
     label: 'Portfolio',
   },
-  blog: {
-    url: '/blog',
-    icon: <WebIcon />,
-    label: 'Blog',
+  [SCREEN_WORK_WITH_ME]: {
+    url: '/work-with-me',
+    icon: <AssignmentTurnedInIcon />,
+    label: 'Work with me!',
   },
 };
 

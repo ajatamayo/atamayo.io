@@ -10,9 +10,9 @@ import { withStyles } from '@material-ui/core/styles';
 
 import { Navigation } from './components';
 import {
-  Blog,
   Home,
   Portfolio,
+  WorkWithMe,
 } from './screens';
 
 import bgImage from './images/background.jpg';
@@ -48,7 +48,7 @@ class App extends Component {
         <div className={classes.root}>
           <Switch>
             <Route exact path="/" render={ownProps => <Home {...ownProps} />} />
-            <Route exact path="/blog" render={ownProps => <Blog {...ownProps} />} />
+            <Route exact path="/work-with-me" render={ownProps => <WorkWithMe {...ownProps} />} />
             <Route exact path="/portfolio" render={ownProps => <Portfolio {...ownProps} />} />
           </Switch>
           <Navigation />

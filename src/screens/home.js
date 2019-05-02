@@ -15,7 +15,7 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 import { changeScreen } from '../actions/appActions';
 import { LinkedinIcon, UnsplashIcon } from '../components/icons';
-import { SCREENS } from '../components/navigation';
+import { SCREENS, SCREEN_PORTFOLIO, SCREEN_WORK_WITH_ME } from '../components/navigation';
 
 const styles = {
   buttonLink: {
@@ -33,11 +33,10 @@ class Home extends Component {
   constructor(props) {
     super(props);
 
-    this.goToPortfolio = this.goToPortfolio.bind(this);
+    this.goToScreen = this.goToScreen.bind(this);
   }
 
-  goToPortfolio() {
-    const screen = 'portfolio';
+  goToScreen(screen) {
     this.props.changeScreen(screen);
 
     const { history } = this.props;
@@ -88,7 +87,7 @@ class Home extends Component {
         </Typography>
 
         <Typography variant="body2">
-          I make websites and mobile apps. Hire me!
+          I make websites and mobile apps. <button type="button" onClick={() => this.goToScreen(SCREEN_WORK_WITH_ME)} className={classes.buttonLink}>Hire me!</button>
         </Typography>
 
         <List dense>
@@ -110,7 +109,8 @@ class Home extends Component {
           Since 2012, I've been developing websites and apps for various clients. And for {new Date().getFullYear() - 2016} years now, I've been doing freelance work too.
         </Typography>
         <Typography variant="body2">
-          Check out my <button type="button" onClick={this.goToPortfolio} className={classes.buttonLink}>portfolio</button>!
+          Check out my <button type="button" onClick={() => this.goToScreen(SCREEN_PORTFOLIO)} className={classes.buttonLink}>portfolio</button>.
+          And when you're ready, <button type="button" onClick={() => this.goToScreen(SCREEN_WORK_WITH_ME)} className={classes.buttonLink}>work with me</button>!
         </Typography>
       </div>
     );
