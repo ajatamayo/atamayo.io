@@ -107,7 +107,7 @@ class Home extends Component {
 
         <Typography variant="body2">
           Hi! My name is AJ and I'm currently working as a Full Stack Developer over at <a href="https://qwikwire.com/">Qwikwire</a>.
-          I graduated <em>cum laude</em> from the University of the Philippines with a Bachelor of Science in Electronics and Communications Engineering, but I ultimately fell in love with coding when I got my first job at <a href="https://icannhas.com/">icannhas</a>.
+          I graduated <em>cum laude</em> from the University of the Philippines with a Bachelor of Science in Electronics and Communications Engineering, but I ultimately fell in love with software development when I got my first job at <a href="https://icannhas.com/">icannhas</a>.
         </Typography>
         <Typography variant="body2">
           Since 2012, I've been developing websites and apps for various clients. And for {new Date().getFullYear() - 2016} years now, I've been doing freelance work too.
