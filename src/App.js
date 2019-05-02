@@ -17,12 +17,18 @@ import {
 
 import bgImage from './images/background.jpg';
 
-const styles = {
+const styles = theme => ({
   root: {
-    minHeight: 'calc(100vh - 156px)',
-    maxWidth: '767px',
+    minHeight: 'calc(100vh - 127px)',
     margin: '0 auto',
-    padding: '0 25px 156px',
+    padding: '0 25px 127px',
+
+    [theme.breakpoints.up('md')]: {
+      minHeight: '100vh',
+      display: 'flex',
+      flexDirection: 'row-reverse',
+      padding: 0,
+    },
 
     '&::before': {
       content: '""',
@@ -37,7 +43,20 @@ const styles = {
       backgroundSize: 'cover',
     },
   },
-};
+  main: {
+    [theme.breakpoints.up('md')]: {
+      flex: 1,
+      padding: '0 25px',
+    },
+  },
+  mainWrapper: {
+    maxWidth: 800,
+
+    [theme.breakpoints.up('lg')]: {
+      paddingTop: 50,
+    },
+  },
+});
 
 class App extends Component {
   render() {
@@ -45,11 +64,15 @@ class App extends Component {
     return (
       <HttpsRedirect disabled>
         <div className={classes.root}>
-          <Switch>
-            <Route exact path="/" render={ownProps => <Home {...ownProps} />} />
-            <Route exact path="/work-with-me" render={ownProps => <WorkWithMe {...ownProps} />} />
-            <Route exact path="/portfolio" render={ownProps => <Portfolio {...ownProps} />} />
-          </Switch>
+          <div className={classes.main}>
+            <div className={classes.mainWrapper}>
+              <Switch>
+                <Route exact path="/" render={ownProps => <Home {...ownProps} />} />
+                <Route exact path="/work-with-me" render={ownProps => <WorkWithMe {...ownProps} />} />
+                <Route exact path="/portfolio" render={ownProps => <Portfolio {...ownProps} />} />
+              </Switch>
+            </div>
+          </div>
           <Navigation />
         </div>
       </HttpsRedirect>

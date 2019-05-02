@@ -109,7 +109,7 @@ function Portfolio(props) {
   const { classes } = props;
 
   return (
-    <div>
+    <Fragment>
       <Typography component="h1" variant="h2">
         Some of my work
       </Typography>
@@ -120,28 +120,30 @@ function Portfolio(props) {
             {project.title}
           </Typography>
 
-          <Grid container spacing={24}>
-            <Grid item xs={12} md={6}>
-              <Card className={classes.card}>
-                <CardMedia component="img" alt={project.title} image={project.image} title={project.title} />
-              </Card>
+          <div style={{ padding: '12px 0' }}>
+            <Grid container spacing={24}>
+              <Grid item xs={12} md={6}>
+                <Card className={classes.card}>
+                  <CardMedia component="img" alt={project.title} image={project.image} title={project.title} />
+                </Card>
+              </Grid>
+              <Grid item xs={12} md={6}>
+                {project.description.map((text, index) => (
+                  <Typography key={`${project.title}${index}`} variant="body2" className={classes.firstParagraph}>
+                    {text}
+                  </Typography>
+                ))}
+                {project.link && (
+                  <Typography variant="body2">
+                    <a href={project.link} target="_blank" rel="noopener noreferrer"><span className={classes.linkLabel}>visit website</span><OpenInNewIcon className={classes.icon} /></a>
+                  </Typography>
+                )}
+              </Grid>
             </Grid>
-            <Grid item xs={12} md={6}>
-              {project.description.map((text, index) => (
-                <Typography key={`${project.title}${index}`} variant="body2" className={classes.firstParagraph}>
-                  {text}
-                </Typography>
-              ))}
-              {project.link && (
-                <Typography variant="body2">
-                  <a href={project.link} target="_blank" rel="noopener noreferrer"><span className={classes.linkLabel}>visit website</span><OpenInNewIcon className={classes.icon} /></a>
-                </Typography>
-              )}
-            </Grid>
-          </Grid>
+          </div>
         </Fragment>
       ))}
-    </div>
+    </Fragment>
   );
 }
 

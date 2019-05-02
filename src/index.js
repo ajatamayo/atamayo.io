@@ -19,7 +19,7 @@ const THEME = createMuiTheme({
     useNextVariants: true,
 
     h2: {
-      paddingTop: 100,
+      paddingTop: 71,
       marginBottom: '0.35em',
     },
     h6: {
@@ -28,6 +28,12 @@ const THEME = createMuiTheme({
     body2: {
       marginTop: '1.5em',
       marginBottom: '0.5em',
+    },
+  },
+  breakpoints: {
+    values: {
+      md: 768,
+      lg: 960,
     },
   },
 });

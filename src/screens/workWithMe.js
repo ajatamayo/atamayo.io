@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
@@ -45,7 +45,7 @@ class WorkWithMe extends Component {
     const { classes } = this.props;
 
     return (
-      <div>
+      <Fragment>
         <Typography component="h1" variant="h2">
           Work with me!
         </Typography>
@@ -70,7 +70,7 @@ class WorkWithMe extends Component {
         </Typography>
 
         <ContactForm />
-      </div>
+      </Fragment>
     );
   }
 }

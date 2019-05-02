@@ -85,7 +85,7 @@ class Home extends Component {
     ];
 
     return (
-      <div>
+      <Fragment>
         <Typography component="h1" variant="h2">
           AJ Tamayo
         </Typography>
@@ -116,7 +116,7 @@ class Home extends Component {
           Check out my <button type="button" onClick={() => this.goToScreen(SCREEN_PORTFOLIO)} className={classes.buttonLink}>portfolio</button>.
           And when you're ready, <button type="button" onClick={() => this.goToScreen(SCREEN_WORK_WITH_ME)} className={classes.buttonLink}>work with me</button>!
         </Typography>
-      </div>
+      </Fragment>
     );
   }
 }
