@@ -34,11 +34,23 @@ const styles = {
   },
 };
 
-const URLS = [
-  '/',
-  '/portfolio',
-  '/blog',
-];
+export const SCREENS = {
+  profile: {
+    url: '/',
+    icon: <PersonIcon />,
+    label: 'Profile',
+  },
+  portfolio: {
+    url: '/portfolio',
+    icon: <FolderSpecialIcon />,
+    label: 'Portfolio',
+  },
+  blog: {
+    url: '/blog',
+    icon: <WebIcon />,
+    label: 'Blog',
+  },
+};
 
 class Navigation extends Component {
   constructor(props) {
@@ -49,14 +61,15 @@ class Navigation extends Component {
 
   componentWillMount() {
     const { location } = this.props;
-    this.props.changeScreen(URLS.indexOf(location.pathname));
+    const initScreenKey = Object.keys(SCREENS).find(key => SCREENS[key].url === location.pathname);
+    this.props.changeScreen(initScreenKey);
   }
 
   handleChange(event, value) {
     this.props.changeScreen(value);
 
     const { history } = this.props;
-    history.push(URLS[value]);
+    history.push(SCREENS[value].url);
   }
 
   render() {
@@ -70,9 +83,17 @@ class Navigation extends Component {
           showLabels
           className={classes.nav}
         >
-          <BottomNavigationAction label="Profile" icon={<PersonIcon />} classes={{ wrapper: classNames( classes.navAction, { [classes.selected]: activeScreen === 0 } ) }} />
-          <BottomNavigationAction label="Portfolio" icon={<FolderSpecialIcon />} classes={{ wrapper: classNames( classes.navAction, { [classes.selected]: activeScreen === 1 } ) }} />
-          <BottomNavigationAction label="Blog" icon={<WebIcon />} classes={{ wrapper: classNames( classes.navAction, { [classes.selected]: activeScreen === 2 } ) }} />
+          {Object.keys(SCREENS).map(key => (
+            <BottomNavigationAction
+              key={key}
+              label={SCREENS[key].label}
+              icon={SCREENS[key].icon}
+              value={key}
+              classes={{
+                wrapper: classNames( classes.navAction, { [classes.selected]: activeScreen === key } )
+              }}
+            />
+          ))}
         </BottomNavigation>
       </div>
     );

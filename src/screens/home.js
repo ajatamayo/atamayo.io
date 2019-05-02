@@ -15,6 +15,7 @@ import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 import { changeScreen } from '../actions/appActions';
 import { LinkedinIcon, UnsplashIcon } from '../components/icons';
+import { SCREENS } from '../components/navigation';
 
 const styles = {
   buttonLink: {
@@ -36,14 +37,49 @@ class Home extends Component {
   }
 
   goToPortfolio() {
-    this.props.changeScreen(1);
+    const screen = 'portfolio';
+    this.props.changeScreen(screen);
 
     const { history } = this.props;
-    history.push('/portfolio');
+    history.push(SCREENS[screen].url);
   }
 
   render() {
     const { classes } = this.props;
+
+    const LIST = [
+      {
+        key: 'smartphone',
+        icon: <SmartphoneIcon />,
+        text: (
+          <Fragment>
+            <a href="tel:+639985685747">(+63) 998 568 5747</a>
+            <span>&nbsp;&middot;&nbsp;</span>
+            <a href="tel:+639162455564">(+63) 916 245 5564</a>
+          </Fragment>
+        ),
+      },
+      {
+        key: 'email',
+        icon: <EmailIcon />,
+        text: <a href="mailto:aj@atamayo.io">aj@atamayo.io</a>,
+      },
+      {
+        key: 'locationon',
+        icon: <LocationOnIcon />,
+        text: 'Makati, Metro Manila, PH',
+      },
+      {
+        key: 'unsplash',
+        icon: <UnsplashIcon />,
+        text: <a href="https://unsplash.com/@ajatamayo">https://unsplash.com/@ajatamayo</a>,
+      },
+      {
+        key: 'linkedin',
+        icon: <LinkedinIcon />,
+        text: <a href="https://www.linkedin.com/in/ajatamayo">https://www.linkedin.com/in/ajatamayo</a>,
+      },
+    ];
 
     return (
       <div>
@@ -56,52 +92,14 @@ class Home extends Component {
         </Typography>
 
         <List dense>
-          <ListItem>
-            <ListItemIcon>
-              <SmartphoneIcon />
-            </ListItemIcon>
-            <ListItemText
-              primary={
-                <Fragment>
-                  <a href="tel:+639985685747">(+63) 998 568 5747</a>
-                  <span>&nbsp;&middot;&nbsp;</span>
-                  <a href="tel:+639162455564">(+63) 916 245 5564</a>
-                </Fragment>
-              }
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <EmailIcon />
-            </ListItemIcon>
-            <ListItemText
-              primary={<a href="mailto:aj@atamayo.io">aj@atamayo.io</a>}
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <LocationOnIcon />
-            </ListItemIcon>
-            <ListItemText
-              primary="Makati, Metro Manila, PH"
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <UnsplashIcon />
-            </ListItemIcon>
-            <ListItemText
-              primary={<a href="https://unsplash.com/@ajatamayo">https://unsplash.com/@ajatamayo</a>}
-            />
-          </ListItem>
-          <ListItem>
-            <ListItemIcon>
-              <LinkedinIcon />
-            </ListItemIcon>
-            <ListItemText
-              primary={<a href="https://www.linkedin.com/in/ajatamayo">https://www.linkedin.com/in/ajatamayo</a>}
-            />
-          </ListItem>
+          {LIST.map(item => (
+            <ListItem key={item.key}>
+              <ListItemIcon>
+                {item.icon}
+              </ListItemIcon>
+              <ListItemText primary={item.text} />
+            </ListItem>
+          ))}
         </List>
 
         <Typography variant="body2">
