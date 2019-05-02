@@ -1652,6 +1652,11 @@ anymatch@^2.0.0:
     micromatch "^3.1.4"
     normalize-path "^2.1.1"
 
+ap@~0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/ap/-/ap-0.2.0.tgz#ae0942600b29912f0d2b14ec60c45e8f330b6110"
+  integrity sha1-rglCYAspkS8NKxTsYMRejzMLYRA=
+
 append-transform@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/append-transform/-/append-transform-1.0.0.tgz#046a52ae582a228bd72f58acfbe2967c678759ab"
@@ -3446,6 +3451,11 @@ dot-prop@^4.1.1:
   dependencies:
     is-obj "^1.0.0"
 
+dot-prop@~2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/dot-prop/-/dot-prop-2.1.0.tgz#6bd199d80792d2323a2b7eb8175f4b32d76a7e72"
+  integrity sha1-a9GZ2AeS0jI6K364F19LMtdqfnI=
+
 dotenv-expand@4.2.0:
   version "4.2.0"
   resolved "https://registry.yarnpkg.com/dotenv-expand/-/dotenv-expand-4.2.0.tgz#def1f1ca5d6059d24a766e587942c21106ce1275"
@@ -5211,6 +5221,11 @@ is-obj@^1.0.0, is-obj@^1.0.1:
   resolved "https://registry.yarnpkg.com/is-obj/-/is-obj-1.0.1.tgz#3e4729ac1f5fde025cd7d83a896dab9f4f67db0f"
   integrity sha1-PkcprB9f3gJc19g6iW2rn09n2w8=
 
+is-object@~1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/is-object/-/is-object-1.0.1.tgz#8952688c5ec2ffd6b03ecc85e769e02903083470"
+  integrity sha1-iVJojF7C/9awPsyF52ngKQMINHA=
+
 is-path-cwd@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/is-path-cwd/-/is-path-cwd-1.0.0.tgz#d225ec23132e89edd38fda767472e62e65f1106d"
@@ -6278,6 +6293,11 @@ map-cache@^0.2.2:
   resolved "https://registry.yarnpkg.com/map-cache/-/map-cache-0.2.2.tgz#c32abd0bd6525d9b051645bb4f26ac5dc98a0dbf"
   integrity sha1-wyq9C9ZSXZsFFkW7TyasXcmKDb8=
 
+map-obj@~1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
+  integrity sha1-2TPOuSBdgr3PSIb2dCvcK03qFG0=
+
 map-visit@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/map-visit/-/map-visit-1.0.0.tgz#ecdca8f13144e660f1b5bd41f12f3479d98dfb8f"
@@ -6884,6 +6904,17 @@ object.values@^1.1.0:
     es-abstract "^1.12.0"
     function-bind "^1.1.1"
     has "^1.0.3"
+
+obstruction@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/obstruction/-/obstruction-2.1.0.tgz#905afff04474bb6f5023979a68161d41eda23be3"
+  integrity sha1-kFr/8ER0u29QI5eaaBYdQe2iO+M=
+  dependencies:
+    ap "~0.2.0"
+    dot-prop "~2.1.0"
+    is-object "~1.0.1"
+    isarray "0.0.1"
+    map-obj "~1.0.1"
 
 obuf@^1.0.0, obuf@^1.1.2:
   version "1.1.2"

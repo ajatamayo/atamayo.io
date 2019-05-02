@@ -19,16 +19,24 @@ import bgImage from './images/background.jpg';
 
 const styles = {
   root: {
-    minHeight: 'calc(100vh - 56px)',
+    minHeight: 'calc(100vh - 156px)',
     maxWidth: '600px',
     margin: '0 auto',
-    padding: '0 25px 56px',
+    padding: '0 25px 156px',
 
-    backgroundImage: `url(${bgImage})`,
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    backgroundPosition: 'center right',
-    backgroundAttachment: 'fixed',
+    '&::before': {
+      content: '" "',
+      backgroundImage: `url(${bgImage})`,
+      backgroundSize: 'auto 100vh',
+      backgroundRepeat: 'no-repeat',
+      backgroundPosition: 'center',
+      backgroundAttachment: 'fixed',
+      width: '100%',
+      height: '100%',
+      position: 'fixed',
+      zIndex: '-999',
+      pointerEvents: 'none',
+    },
   },
 };
 
@@ -36,7 +44,7 @@ class App extends Component {
   render() {
     const { classes } = this.props;
     return (
-      <HttpsRedirect>
+      <HttpsRedirect disabled>
         <div className={classes.root}>
           <Switch>
             <Route exact path="/" render={ownProps => <Home {...ownProps} />} />
