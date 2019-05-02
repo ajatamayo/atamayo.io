@@ -19,6 +19,7 @@ import { SCREENS, SCREEN_PORTFOLIO, SCREEN_WORK_WITH_ME } from '../components/na
 
 const styles = {
   buttonLink: {
+    background: 'none',
     border: 'none',
     padding: 0,
     margin: 0,
@@ -26,6 +27,9 @@ const styles = {
     fontSize: '1em',
     color: 'rgb(0, 0, 238)',
     cursor: 'pointer',
+  },
+  listText: {
+    wordBreak: 'break-word',
   },
 };
 
@@ -96,7 +100,7 @@ class Home extends Component {
               <ListItemIcon>
                 {item.icon}
               </ListItemIcon>
-              <ListItemText primary={item.text} />
+              <ListItemText primary={item.text} classes={{ root: classes.listText }} />
             </ListItem>
           ))}
         </List>

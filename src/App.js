@@ -20,22 +20,21 @@ import bgImage from './images/background.jpg';
 const styles = {
   root: {
     minHeight: 'calc(100vh - 156px)',
-    maxWidth: '600px',
+    maxWidth: '767px',
     margin: '0 auto',
     padding: '0 25px 156px',
 
     '&::before': {
-      content: '" "',
-      backgroundImage: `url(${bgImage})`,
-      backgroundSize: 'auto 100vh',
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'center',
-      backgroundAttachment: 'fixed',
+      content: '""',
+      display: 'block',
+      position: 'fixed',
+      left: 0,
+      top: 0,
       width: '100%',
       height: '100%',
-      position: 'fixed',
-      zIndex: '-999',
-      pointerEvents: 'none',
+      zIndex: -10,
+      background: `url(${bgImage}) no-repeat center center`,
+      backgroundSize: 'cover',
     },
   },
 };

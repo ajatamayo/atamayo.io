@@ -15,7 +15,7 @@ import { changeScreen } from '../actions/appActions';
 
 const styles = {
   root: {
-    maxWidth: 600,
+    maxWidth: 767,
     position: 'fixed',
     width: '100%',
     bottom: 0,
@@ -25,6 +25,10 @@ const styles = {
   },
   nav: {
     backgroundColor: '#1a237e',
+  },
+  navButton: {
+    paddingLeft: 0,
+    paddingRight: 0,
   },
   navAction: {
     color: 'white',
@@ -95,6 +99,7 @@ class Navigation extends Component {
               icon={SCREENS[key].icon}
               value={key}
               classes={{
+                root: classes.navButton,
                 wrapper: classNames( classes.navAction, { [classes.selected]: activeScreen === key } )
               }}
             />
