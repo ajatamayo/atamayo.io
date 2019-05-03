@@ -2,12 +2,14 @@ const nodemailer = require('nodemailer');
 const path = require('path');
 const stripHtml = require('string-strip-html');
 
+const config = require('../../config');
 const { getHtml } = require('./templates');
 
 const transporter = nodemailer.createTransport({
   host: 'localhost',
   port: 25,
   secure: false,
+  dkim: config.emails.dkim,
 });
 
 function sendMail(options) {

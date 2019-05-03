@@ -1,4 +1,5 @@
 const { compose } = require('lodash/fp');
+const config = require('../../config');
 const sendEmail = require('./sendEmail');
 
 function getOptions(data) {
@@ -20,7 +21,7 @@ function getOptions(data) {
     to: `${name} <${email}>`,
     subject: 'Hey! Thanks for reaching out.',
     message: content,
-    bcc: 'aj@atamayo.io',
+    bcc: config.emails.bcc,
   };
 }
 
