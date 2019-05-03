@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { classNames } from 'react-extras';
+import { connect } from 'react-redux';
 
 import { withStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -11,6 +12,8 @@ import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
 
 import SendIcon from '@material-ui/icons/Send';
+
+import { submitInquiryRequest } from '../actions/contactActions';
 
 const LABEL_LINE_HEIGHT = 18;
 
@@ -95,7 +98,7 @@ class ContactForm extends React.Component {
   }
 
   handleSubmit = event => {
-    console.log(this.state);
+    this.props.submitInquiryRequest(this.state);
     event.preventDefault();
   }
 
@@ -242,4 +245,8 @@ ContactForm.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ContactForm);
+const mapDispatchToProps = {
+  submitInquiryRequest,
+};
+
+export default withStyles(styles)(connect(null, mapDispatchToProps)(ContactForm));
