@@ -2,11 +2,15 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
 import { classNames } from 'react-extras';
+
 import { withStyles } from '@material-ui/core/styles';
+import Button from '@material-ui/core/Button';
 import FormControl from '@material-ui/core/FormControl';
 import FormHelperText from '@material-ui/core/FormHelperText';
 import InputLabel from '@material-ui/core/InputLabel';
 import OutlinedInput from '@material-ui/core/OutlinedInput';
+
+import SendIcon from '@material-ui/icons/Send';
 
 const LABEL_LINE_HEIGHT = 18;
 
@@ -44,6 +48,12 @@ const styles = {
   },
   input: {
     minWidth: 250,
+  },
+  sendButton: {
+    padding: '6px 24px 6px 32px',
+  },
+  sendIcon: {
+    marginLeft: 8,
   },
 };
 
@@ -84,11 +94,16 @@ class ContactForm extends React.Component {
     this.setState({ timeline: event.target.value });
   }
 
+  handleSubmit = event => {
+    console.log(this.state);
+    event.preventDefault();
+  }
+
   render() {
     const { classes } = this.props;
 
     return (
-      <div className={classes.container}>
+      <form className={classes.container} noValidate autoComplete="off" method="POST" onSubmit={this.handleSubmit}>
         <FormControl variant="outlined" className={classes.formControl}>
           <InputLabel
             ref={ref => {
@@ -166,7 +181,7 @@ class ContactForm extends React.Component {
             htmlFor="form-existing"
             classes={{ root: classes.label }}
           >
-            Do you currently have a website or app? If so, what isn't working for you? What do you love about it?
+            What's your current website or app? What do you love/hate about it?
           </InputLabel>
           <OutlinedInput
             id="form-existing"
@@ -186,7 +201,7 @@ class ContactForm extends React.Component {
               root: classes.input,
             }}
           />
-          <FormHelperText id="existing-helper-text">If you don't have one, what 3 websites or apps do you love?</FormHelperText>
+          <FormHelperText id="existing-helper-text">Or if you don't have a website or app, what 3 websites do you love?</FormHelperText>
         </FormControl>
 
         <FormControl variant="outlined" className={classNames(classes.formControl, classes.fullWidth)}>
@@ -204,14 +219,21 @@ class ContactForm extends React.Component {
             value={this.state.timeline}
             onChange={this.handleTimelineChange}
             labelWidth={this.timelineLabelRef ? this.timelineLabelRef.offsetWidth : 0}
+            aria-describedby="timeline-helper-text"
             multiline
             classes={{
               inputMultiline: classes.multilineInput,
               root: classes.input,
             }}
           />
+          <FormHelperText id="timeline-helper-text">While I am pretty flexible with my time, this helps me get a grasp on how I can fit you in my schedule. :)</FormHelperText>
         </FormControl>
-      </div>
+
+        <Button variant="contained" color="primary" className={classes.sendButton} type="submit">
+          Send
+          <SendIcon className={classes.sendIcon} />
+        </Button>
+      </form>
     );
   }
 }
