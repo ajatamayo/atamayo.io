@@ -6,7 +6,7 @@ function getOptions(data) {
   const q1 = '1. What do you want your website or app to accomplish?';
   const q2 = '2. What\'s your current website or app? What do you love/hate about it? Or if you don\'t have a website or app, what 3 websites do you love?';
   const q3 = '3. What\'s your timeline?';
-  const responses = `${q1}\n\n\n${goal}\n\n\n${q2}\n\n\n${existing}\n\n\n${q3}\n\n\n${timeline}`;
+  const responses = `${q1}\n\n${goal}\n\n\n${q2}\n\n${existing}\n\n\n${q3}\n\n${timeline}`;
   const content = `
     <p style="color: #4a4a4a;"><strong style="font-size: 26px;">Hi ${name},</strong></p>
     <p style="color: #4a4a4a;">Thanks for your interest in working with me. I should get back to you within 2 days.</p>
