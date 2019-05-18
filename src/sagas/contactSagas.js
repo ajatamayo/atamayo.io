@@ -17,7 +17,9 @@ export function* submitInquiryRequestFlow(action) {
     }
     yield put(submitInquirySuccess());
   } catch (error) {
-    yield put(submitInquiryFailure(error));
+    const { data } = error.response;
+    const { message } = data;
+    yield put(submitInquiryFailure(message || data));
   }
 }
 

@@ -12,6 +12,6 @@ export function submitInquirySuccess() {
   return { type: SUBMIT_INQUIRY_SUCCESS };
 }
 
-export function submitInquiryFailure(error) {
-  return { type: SUBMIT_INQUIRY_FAILURE, error };
+export function submitInquiryFailure(message) {
+  return { type: SUBMIT_INQUIRY_FAILURE, message };
 }

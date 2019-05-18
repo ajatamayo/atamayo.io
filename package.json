@@ -16,7 +16,9 @@
     "eslint-plugin-react": "^7.12.4",
     "express": "^4.16.4",
     "history": "^4.9.0",
+    "morgan": "^1.9.1",
     "nodemailer": "^6.1.1",
+    "nodemon": "^1.19.0",
     "obstruction": "^2.1.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -37,10 +39,14 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "nodemon ./server/app.js"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "nodemonConfig": {
+    "ignore": ["src/*"]
   },
   "browserslist": {
     "production": [

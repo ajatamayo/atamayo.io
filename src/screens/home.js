@@ -114,7 +114,9 @@ class Home extends Component {
         </Typography>
         <Typography variant="body2">
           Check out my <button type="button" onClick={() => this.goToScreen(SCREEN_PORTFOLIO)} className={classes.buttonLink}>portfolio</button>.
-          And when you're ready, <button type="button" onClick={() => this.goToScreen(SCREEN_WORK_WITH_ME)} className={classes.buttonLink}>work with me</button>!
+        </Typography>
+        <Typography variant="body2">
+          Need something built? <button type="button" onClick={() => this.goToScreen(SCREEN_WORK_WITH_ME)} className={classes.buttonLink}>Work with me!</button>
         </Typography>
       </Fragment>
     );

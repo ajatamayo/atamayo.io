@@ -9,6 +9,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 
 import CakeIcon from '@material-ui/icons/Cake';
 import DescriptionIcon from '@material-ui/icons/Description';
+import SentimentSatisfiedAltIcon from '@material-ui/icons/SentimentSatisfiedAlt';
 import ThumbUpIcon from '@material-ui/icons/ThumbUp';
 
 import { ContactForm } from '../components';
@@ -31,9 +32,14 @@ class WorkWithMe extends Component {
         text: 'First, I\'ll need to understand what your goal is. To help start this conversation, there\'s a short form down below which you can answer.',
       },
       {
+        key: 'meet',
+        icon: <SentimentSatisfiedAltIcon />,
+        text: 'Next, we\'ll meet online (or maybe in person if geography permits us!) to get to understand the other better.',
+      },
+      {
         key: 'proposal',
         icon: <DescriptionIcon />,
-        text: 'Next, I\'ll send you a proposal detailing what to expect and when to expect them, a breakdown of what it\'s going to cost, how we\'ll monitor the project\'s progress, etc.'
+        text: 'Then, I\'ll send you a proposal detailing what to expect and when to expect them, a breakdown of what it\'s going to cost, how we\'ll monitor the project\'s progress, etc.'
       },
       {
         key: 'agreement',
