@@ -1,6 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
+const mongoose = require('mongoose');
 
 const config = require('./config');
 const api = require('./api');
@@ -15,5 +16,23 @@ app.use(bodyParser.json({ type: ['json', 'application/csp-report'] }));
 app.use(morgan('dev'));
 app.use('/api', api);
 
-// eslint-disable-next-line no-console
+/* eslint-disable no-console */
 app.listen(port, () => console.log(`App listening on port ${port}!`));
+
+const options = {
+  autoReconnect: true,
+  reconnectTries: 30,
+  reconnectInterval: 1000, // Reconnect every 1000ms
+  useNewUrlParser: true,
+};
+
+mongoose
+  .connect(config.db.uri, options)
+  .then(() => {
+    console.log(`Connected to Mongodb: ${config.db.uri}`);
+  })
+  .catch((err) => {
+    console.log(`ERROR connecting to Mongodb: ${config.db.uri}`);
+    console.log(`ERROR: ${err}`);
+  });
+/* eslint-enable no-console */

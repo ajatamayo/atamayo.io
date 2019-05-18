@@ -12,4 +12,7 @@ module.exports = {
       privateKey: process.env.EMAIL_DKIM_PRIVATE_KEY || '',
     },
   },
+  db: {
+    uri: process.env.MONGODB_URI,
+  },
 };

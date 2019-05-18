@@ -118,7 +118,7 @@ class ContactForm extends React.Component {
             onChange={this.handleNameChange}
             labelWidth={this.nameLabelRef ? this.nameLabelRef.offsetWidth : 0}
             classes={{ root: classes.input }}
-            disabled={this.props.isSending}
+            disabled={this.props.isSending || this.props.sent}
           />
         </FormControl>
 
@@ -138,7 +138,7 @@ class ContactForm extends React.Component {
             onChange={this.handleEmailChange}
             labelWidth={this.emailLabelRef ? this.nameLabelRef.offsetWidth : 0}
             classes={{ root: classes.input }}
-            disabled={this.props.isSending}
+            disabled={this.props.isSending || this.props.sent}
             type="email"
           />
         </FormControl>
@@ -164,7 +164,7 @@ class ContactForm extends React.Component {
               inputMultiline: classes.multilineInput,
               root: classes.input,
             }}
-            disabled={this.props.isSending}
+            disabled={this.props.isSending || this.props.sent}
           />
           <FormHelperText id="message-helper-text">
             Help me understand your goals for this project. Some guide questions for you:<br />
