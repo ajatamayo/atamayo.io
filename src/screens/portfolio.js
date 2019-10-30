@@ -39,7 +39,7 @@ const PROJECTS = [
       'Currently working as the senior developer on the project.',
       'Amazon AWS, Compass, SASS, Ant Design, Google Analytics, HTML, Node.js, ReactJS, Heroku, MongoDB, Photoshop, Figma',
     ],
-    link: 'https://beta.aqwire.io',
+    link: 'https://aqwire-marketplace-staging.herokuapp.com',
   },
   {
     title: 'Natalac',
