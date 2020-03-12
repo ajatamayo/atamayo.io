@@ -106,7 +106,7 @@ class Home extends Component {
         </List>
 
         <Typography variant="body2">
-          Hi! My name is AJ and I'm currently working as a Full Stack Developer over at <a href="https://qwikwire.com/">Qwikwire</a>.
+          Hi! My name is AJ and I'm currently working as a Product Engineer over at <a href="https://thinkingmachin.es/">Thinking Machines</a>.
           I graduated <em>cum laude</em> from the University of the Philippines with a Bachelor of Science in Electronics and Communications Engineering, but I ultimately fell in love with software development when I got my first job at <a href="https://icannhas.com/">icannhas</a>.
         </Typography>
         <Typography variant="body2">
