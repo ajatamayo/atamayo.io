@@ -1,0 +1,23 @@
+service: default
+runtime: python37
+instance_class: F1
+handlers:
+- url: /static
+  static_dir: build/static
+  secure: always
+- url: /(.*\.(json|ico|js))$
+  static_files: build/\1
+  upload: build/.*\.(json|ico|js)$
+  secure: always
+- url: .*
+  static_files: build/index.html
+  upload: build/index.html
+  secure: always
+automatic_scaling:
+  target_cpu_utilization: 0.95
+  max_instances: 2
+  min_instances: 0
+  target_throughput_utilization: 0.95
+  max_concurrent_requests: 10
+  max_pending_latency: 7000ms
+  min_pending_latency: 1000ms

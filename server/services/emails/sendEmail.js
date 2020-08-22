@@ -1,16 +1,11 @@
-const nodemailer = require('nodemailer');
+const mailgunjs = require('mailgun-js');
 const path = require('path');
 const stripHtml = require('string-strip-html');
 
 const config = require('../../config');
 const { getHtml } = require('./templates');
 
-const transporter = nodemailer.createTransport({
-  host: 'localhost',
-  port: 25,
-  secure: false,
-  dkim: config.emails.dkim,
-});
+const mailgun = mailgunjs({ apiKey: config.mailgun.apikey, domain: config.mailgun.domain });
 
 function sendMail(options) {
   const logoPath = path.join(__dirname, 'logo.png');
@@ -19,11 +14,7 @@ function sendMail(options) {
     from: '"AJ Tamayo" <aj@atamayo.io>',
     subject: 'Hey!',
     message: '<b>What\'s up?</b>',
-    attachments: [{
-      filename: 'logo.png',
-      path: logoPath,
-      cid: 'logo_cid',
-    }],
+    inline: logoPath,
   };
 
   const mailOpts = Object.assign({}, defaults, options);
@@ -31,8 +22,8 @@ function sendMail(options) {
   mailOpts.text = stripHtml(mailOpts.message);
 
   return new Promise(((resolve, reject) => {
-    transporter
-      .sendMail(mailOpts)
+    mailgun.messages()
+      .send(mailOpts)
       .then((info) => {
         // eslint-disable-next-line no-console
         console.log(info);

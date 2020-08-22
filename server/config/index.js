@@ -12,6 +12,10 @@ module.exports = {
       privateKey: process.env.EMAIL_DKIM_PRIVATE_KEY || '',
     },
   },
+  mailgun: {
+    apikey: process.env.MAILGUN_API_KEY || '',
+    domain: process.env.MAILGUN_DOMAIN || '',
+  },
   db: {
     uri: process.env.MONGODB_URI,
   },

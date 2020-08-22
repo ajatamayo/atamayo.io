@@ -1,0 +1,9 @@
+dispatch:
+  - url: "monies.atamayo.io/api/*"
+    service: monies-api
+  - url: "monies.atamayo.io/*"
+    service: monies
+  - url: "atamayo.io/api/*"
+    service: api
+  - url: "atamayo.io/*"
+    service: default
