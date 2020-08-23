@@ -10,7 +10,7 @@ const app = express();
 
 const { port } = config.app;
 
-app.use(function(req,res,next){setTimeout(next,1000)});
+app.use(function(req,res,next){setTimeout(next, 1000)});
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json({ type: ['json', 'application/csp-report'] }));
 app.use(morgan('dev'));
@@ -20,10 +20,8 @@ app.use('/api', api);
 app.listen(port, () => console.log(`App listening on port ${port}!`));
 
 const options = {
-  autoReconnect: true,
-  reconnectTries: 30,
-  reconnectInterval: 1000, // Reconnect every 1000ms
   useNewUrlParser: true,
+  useUnifiedTopology: true,
 };
 
 mongoose
