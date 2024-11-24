@@ -1,11 +1,33 @@
 dispatch:
-  - url: "pain.atamayo.io/*"
-    service: pain
   - url: "monies.atamayo.io/api/*"
     service: monies-api
+
   - url: "monies.atamayo.io/*"
     service: monies
+
+  - url: "time-tracker.atamayo.io/api/*"
+    service: time-tracker-api
+
+  - url: "time-tracker.atamayo.io/*"
+    service: time-tracker
+
+  - url: "dfa.atamayo.io/*"
+    service: dfa
+
+  - url: "pain.atamayo.io/api/*"
+    service: pain-api
+
+  - url: "pain.atamayo.io/*"
+    service: pain
+
   - url: "atamayo.io/api/*"
     service: api
+
   - url: "atamayo.io/*"
+    service: default
+
+  - url: "ajcodes.dev/api/*"
+    service: api
+
+  - url: "ajcodes.dev/*"
     service: default
