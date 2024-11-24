@@ -12,10 +12,10 @@ const footer = `
       </tr>
       <tr>
         <td width="32px" align="left" style="padding: 32px 0 0 0; width: 20px" valign="top">
-          <img src="cid:logo.png" style="width: 18px; height: auto" alt="atamayo.io" />
+          <img src="cid:logo.png" style="width: 18px; height: auto" alt="ajcodes.dev" />
         </td>
         <td align="left" style="padding: 32px 0 0 2px" valign="top">
-          atamayo.io
+          ajcodes.dev
         </td>
       </tr>
     </table>

@@ -65,7 +65,7 @@ class Home extends Component {
       {
         key: 'email',
         icon: <EmailIcon />,
-        text: <a href="mailto:aj@atamayo.io">aj@atamayo.io</a>,
+        text: <a href="mailto:hello@ajcodes.dev">hello@ajcodes.dev</a>,
       },
       {
         key: 'locationon',
