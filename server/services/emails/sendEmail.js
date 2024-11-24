@@ -11,7 +11,7 @@ function sendMail(options) {
   const logoPath = path.join(__dirname, 'logo.png');
 
   const defaults = {
-    from: '"AJ Tamayo" <aj@atamayo.io>',
+    from: '"AJ Tamayo" <hello@ajcodes.dev>',
     subject: 'Hey!',
     message: '<b>What\'s up?</b>',
     inline: logoPath,
