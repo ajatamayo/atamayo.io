@@ -19,18 +19,13 @@ app.use('/api', api);
 /* eslint-disable no-console */
 app.listen(port, () => console.log(`App listening on port ${port}!`));
 
-const options = {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-};
-
 mongoose
-  .connect(config.db.uri, options)
+  .connect(config.db.uri)
   .then(() => {
-    console.log(`Connected to Mongodb: ${config.db.uri}`);
+    console.log(`Connected to Mongodb`);
   })
   .catch((err) => {
-    console.log(`ERROR connecting to Mongodb: ${config.db.uri}`);
+    console.log(`ERROR connecting to Mongodb`);
     console.log(`ERROR: ${err}`);
   });
 /* eslint-enable no-console */
